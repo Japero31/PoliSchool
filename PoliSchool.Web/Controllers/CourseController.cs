@@ -21,7 +21,7 @@ namespace PoliSchool.Web.Controllers
         // GET: CourseController
         public ActionResult Index()
         {
-            var courses = this.courseDao.GetCourses().Select(co => new Models.CourseListModel()
+            var course = this.courseDao.GetCourses().Select(co => new Models.CourseListModel()
             {
                 CourseId = co.CourseId,
                 CreationDateDisplay = co.CreationDateDisplay,
@@ -31,7 +31,7 @@ namespace PoliSchool.Web.Controllers
             });
 
 
-            return View(courses);
+            return View(course);
         }
 
         // GET: CourseController/Details/5

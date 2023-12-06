@@ -43,7 +43,7 @@ namespace PoliSchool.DAL.Daos
 
         public List<CourseModel> GetCourses()
         {
-            List<CourseModel> courses = new List<CourseModel>();
+            List<CourseModel> course = new List<CourseModel>();
             try
             {
                 ///LINQ QUERY
@@ -60,14 +60,14 @@ namespace PoliSchool.DAL.Daos
                                 DepartmentId = dep.DepartmentId
                             };
 
-                courses = query.ToList();
+                course = query.ToList();
 
             }
             catch (Exception ex)
             {
                 throw new CourseDaoException(ex.Message);
             }
-            return courses;
+            return course;
         }
 
         public void RemoveCourse(Course course)

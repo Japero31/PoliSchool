@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using PoliSchool.DAL.Context;
 using PoliSchool.DAL.Daos;
 using PoliSchool.DAL.Interfaces;
+using school.DAL.DAOS;
+using school.DAL.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,7 @@ builder.Services.AddDbContext<SchoolDbContext>(options => options.UseSqlServer(b
 builder.Services.AddTransient<IStudentDao, StudentDao>();
 builder.Services.AddTransient<IDepartmentDao, DepartmentDao>();
 builder.Services.AddTransient<ICourseDao, CourseDao>();
+builder.Services.AddTransient<IInstructorDao , InstructorDao>();
 
 
 var app = builder.Build();
